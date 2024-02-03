@@ -1,7 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import web3 from "./web3";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    const init = async () => {
+      const accounts = await web3.eth.getAccounts();
+      console.log(accounts);
+    };
+    init();
+  }
+  , []);
+  
   return (
     <div className="App">
       <header className="App-header">
